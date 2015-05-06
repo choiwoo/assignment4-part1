@@ -15,7 +15,10 @@ if(isset($_GET['action']) && $_GET['action'] = 'end'){
 
 //no username
 if (empty($_POST['username'])) {
-  echo 'A username must be entered. Click <a href="login.php">here</a> to return to the login screen.';
+  if (!isset($_SESSION['username'])){
+  echo 'A username must be entered. Click <a href= login.php >here</a> to return to the login screen.';
+  exit();
+  }
 }
 
 if(isset($_POST['username'])){
